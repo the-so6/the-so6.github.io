@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linux chapter on </title>
+    <link>the-so6.github.io/docs/linux/</link>
+    <description>Recent content in Linux chapter on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Tue, 06 Oct 2020 08:49:15 +0000</lastBuildDate><atom:link href="the-so6.github.io/docs/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>RabbitMQ</title>
+      <link>the-so6.github.io/docs/linux/rabbitmq/</link>
+      <pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate>
+      
+      <guid>the-so6.github.io/docs/linux/rabbitmq/</guid>
+      <description>RabbitMQCtl Queue management List all queues  $ rabbitmqctl list_queues App management Stop RabbitMQ app  $ rabbitmqctl stop_app Start RabbitMQ app  $ rabbitmqctl start_app Users management List RabbitMQ users  $ rabbitmqctl list_users Status Get RabbitMQ status  $ rabbitmqctl status Get Cluster status  $ rabbitmqctl cluster_status Cluster management Set Cluster name  $ rabbitmqctl set_cluster_name $(NAME) Joining the cluster  $ rabbitmqctl join_cluster rabbit@$(NODE_SHORT_NAME) Option :</description>
+    </item>
+    
+    <item>
+      <title>Systemd</title>
+      <link>the-so6.github.io/docs/linux/systemd/</link>
+      <pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate>
+      
+      <guid>the-so6.github.io/docs/linux/systemd/</guid>
+      <description>Command line Common The --user option limit command on the user scope
+The --system option do the same but for the system and is the default.
+The user systemd unit file can be found in :
+ ~/.local/share/systemd/user/ ~/.config/systemd/user/  Get system status  $ systemctl status List all units in running state  $ systemctl list-units --state running List all failed units  $ systemctl --failed Get a list of all installed units  $ systemctl list-unit-files Get unit status  $ systemctl status $(UNIT_NAME) Start unit  $ systemctl start $(UNIT_NAME) Stop unit  $ systemctl stop $(UNIT_NAME) Restart unit  $ systemctl restart $(UNIT_NAME) Reload unit  $ systemctl reload $(UNIT_NAME) Check if unit is enabled  $ systemctl is-enabled $(UNIT_NAME) Enable unit at boot  $ systemctl enable $(UNIT_NAME) Disable unit  $ systemctl disable $(UNIT_NAME) Mask a given unit  $ systemctl mask $(UNIT_NAME) Unmask a given unit  $ systemctl unmask $(UNIT_NAME) List all timer  $ systemctl list-timers Reload the systemd manager configuration Usefull when you change or create an unit file</description>
+    </item>
+    
+  </channel>
+</rss>
