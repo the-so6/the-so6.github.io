@@ -7,23 +7,5 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <lastBuildDate>Tue, 06 Oct 2020 08:48:23 +0000</lastBuildDate><atom:link href="/docs/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Openvswitch</title>
-      <link>/docs/net/ovs/</link>
-      <pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate>
-      
-      <guid>/docs/net/ovs/</guid>
-      <description>Openvswitch DB Print Version  $ ovs-vsctl -V Show configuration  $ ovs-vsctl show List bridges  $ ovs-vsctl list-br List ports on bridge  $ ovs-vsctl list-ports &amp;lt;bridge&amp;gt; Add bridge  ovs-vsctl add-br &amp;lt;bridge&amp;gt; Add port on bridge  ovs-vsctl add-port &amp;lt;bridge&amp;gt; &amp;lt;interface&amp;gt; Set controller  ovs-vsctl set-controller &amp;lt;bridge&amp;gt; tcp:&amp;lt;IP&amp;gt;:&amp;lt;port&amp;gt; tcp:&amp;lt;IP&amp;gt;:&amp;lt;port&amp;gt; Get controller information  ovs-vsctl get-controller &amp;lt;bridge&amp;gt; Delete controller  ovs-vsctl del-controller &amp;lt;bridge&amp;gt; Set fail mode Standalone  ovs-vsctl set-fail-mode &amp;lt;bridge&amp;gt; standalone Secure  ovs-vsctl set-fail-mode &amp;lt;bridge&amp;gt; secure Get fail mode  ovs-vsctl get-fail-mode &amp;lt;bridge&amp;gt; Openvswitch Open Flows Dump flows for a bridge  ovs-ofctl dump-flows &amp;lt;bridge&amp;gt; Delete flows for a bridge  ovs-ofctl del-flows &amp;lt;bridge&amp;gt; </description>
-    </item>
-    
-    <item>
-      <title>Open Virtual Network</title>
-      <link>/docs/net/ovn/</link>
-      <pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate>
-      
-      <guid>/docs/net/ovn/</guid>
-      <description>CLI  Logical configuration (Northdound DB) ovn-nbctl Physical configuration (Southbound DB) ovn-sbctl Packet tracing ovn-trace  Northbound configuration Show configuration  $ ovn-nbctl show switch configuration  $ ovn-nbctl show &amp;lt;switch&amp;gt; router configuration  $ ovn-nbctl show &amp;lt;router&amp;gt; Add a switch  $ ovn-nbctl ls-add &amp;lt;switch&amp;gt; Delete a switch  $ ovn-nbctl ls-del &amp;lt;switch&amp;gt; Add a port into a switch  $ ovn-nbctl lsp-add &amp;lt;switch&amp;gt; &amp;lt;port&amp;gt; Delete a port into a switch  $ ovn-nbctl lsp-del &amp;lt;port&amp;gt; Router Creation  $ ovn-nbctl lr-add &amp;lt;router&amp;gt; Delete router  $ ovn-nbctl lr-del &amp;lt;router&amp;gt; Create port on router  $ ovn-nbctl lrp-add &amp;lt;router&amp;gt; &amp;lt;port&amp;gt; &amp;lt;mac_addr&amp;gt; &amp;lt;net/mask&amp;gt; Delete port on router  $ ovn-nbctl lrp-del &amp;lt;port&amp;gt; Set IP address on switch  $ ovn-nbctl lsp-set-addresses &amp;lt;port&amp;gt; &amp;lt;mac_addr&amp;gt; &amp;lt;ip_addr&amp;gt; Southbound configuration Show configuration  $ ovn-sbctl show Add chassis  $ ovn-sbctl chassis-add &amp;lt;server&amp;gt; &amp;lt;encap_type&amp;gt; &amp;lt;ip_addr&amp;gt; Delete chassis  $ ovn-sbctl chassis-del &amp;lt;server&amp;gt; </description>
-    </item>
-    
   </channel>
 </rss>

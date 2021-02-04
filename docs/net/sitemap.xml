@@ -2,8 +2,15 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
     <url>
-      <loc>/docs/prologue/introduction/</loc>
-      <lastmod>2020-10-06T08:48:57+00:00</lastmod>
+      <loc>/docs/net/ovs/</loc>
+      <lastmod>2020-10-13T15:21:01+02:00</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.5</priority>
+    </url>
+    
+    <url>
+      <loc>/docs/net/ovn/</loc>
+      <lastmod>2020-10-13T15:21:01+02:00</lastmod>
       <changefreq>weekly</changefreq>
       <priority>0.5</priority>
     </url>
