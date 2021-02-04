@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/blog/say-hello-to-doks/</loc>
+    <loc>/blog/welcome-to-my-first-documentation/</loc>
     <lastmod>2020-11-04T09:19:42+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -138,13 +138,6 @@
   <url>
     <loc>/docs/openstack/heat/</loc>
     <lastmod>2020-10-13T15:21:01+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>/contributors/henk-verlinde/</loc>
-    <lastmod>2020-11-04T09:19:42+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
