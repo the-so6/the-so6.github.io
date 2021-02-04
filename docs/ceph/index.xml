@@ -2,27 +2,27 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ceph chapter on </title>
-    <link>the-so6.github.io/docs/ceph/</link>
+    <link>/docs/ceph/</link>
     <description>Recent content in Ceph chapter on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Tue, 06 Oct 2020 08:49:15 +0000</lastBuildDate><atom:link href="the-so6.github.io/docs/ceph/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 06 Oct 2020 08:49:15 +0000</lastBuildDate><atom:link href="/docs/ceph/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Ceph cluster</title>
-      <link>the-so6.github.io/docs/ceph/administration/</link>
+      <link>/docs/ceph/administration/</link>
       <pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate>
       
-      <guid>the-so6.github.io/docs/ceph/administration/</guid>
+      <guid>/docs/ceph/administration/</guid>
       <description>Cluster Get cluster health $ ceph -s $ ceph health $ ceph -w Dump config $ ceph --admin-daemon $(admin_socket) config show The $(admin_socket) should be in /var/run/ceph for example /var/run/ceph/ceph-mon.ceph-mon.asok
 Get OSD stats $ ceph osd stat Get MON stats $ ceph mon stat Get MDS stats $ ceph mds stat Dump placement group $ ceph pg dump Dump stunked placement group $ ceph pg dump_stuck Get MON quorum status $ ceph quorum_status Monitor Dump monmap $ ceph mon getmap -o $(PATH) Print monmap $ monmaptool --print $(MONMAP_PATH) </description>
     </item>
     
     <item>
       <title>CRUSH map and rules</title>
-      <link>the-so6.github.io/docs/ceph/crushmap/</link>
+      <link>/docs/ceph/crushmap/</link>
       <pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate>
       
-      <guid>the-so6.github.io/docs/ceph/crushmap/</guid>
+      <guid>/docs/ceph/crushmap/</guid>
       <description>CrushMap Get CrushMap
 $ ceph osd getcrushmap -o $(binary_file) Convert crushMap From binary to text
 $ crushtool -d $(binary_file) -o $(text_file) From text to binary
@@ -32,10 +32,10 @@ $ crushtool -c $(text_file) -o $(binary_file) Set CrushMap $ ceph osd setcrushma
     
     <item>
       <title>Pools</title>
-      <link>the-so6.github.io/docs/ceph/pool/</link>
+      <link>/docs/ceph/pool/</link>
       <pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate>
       
-      <guid>the-so6.github.io/docs/ceph/pool/</guid>
+      <guid>/docs/ceph/pool/</guid>
       <description>Pools List pools $ ceph osd pool ls detail Here detail is optionnal
 Get pool information $ ceph osd pool get $(pool_name) all Delete pool $ ceph osd pool rm $(pool_name) $(pool_name) --yes-really-really-mean-it Create new replicated pool $ ceph osd pool create $(pool_name) $(pg_number) $ ceph osd pool set $(pool_name) size $(replicas_number) Create new erasure coding pool Get erasure coding profile :
 $ ceph osd erasure-code-profile get default Or create new erasure coding profile :</description>
@@ -43,37 +43,37 @@ $ ceph osd erasure-code-profile get default Or create new erasure coding profile
     
     <item>
       <title>User Management </title>
-      <link>the-so6.github.io/docs/ceph/cephx/</link>
+      <link>/docs/ceph/cephx/</link>
       <pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate>
       
-      <guid>the-so6.github.io/docs/ceph/cephx/</guid>
+      <guid>/docs/ceph/cephx/</guid>
       <description>List all CephX auth $ ceph auth list Get an user $ ceph auth get-or-create $(USER) Create an user $ ceph auth get-or-create $(USER) mon $(MON_CAPS) osd $(OSD_CAPS) Update user caps $ ceph auth caps $(USER) mon $(MON_CAPS) osd $(OSD_CAPS) Delete user $ ceph auth caps $(USER) mon &amp;#39;&amp;#39; osd &amp;#39;&amp;#39; </description>
     </item>
     
     <item>
       <title>OSD</title>
-      <link>the-so6.github.io/docs/ceph/osd/</link>
+      <link>/docs/ceph/osd/</link>
       <pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate>
       
-      <guid>the-so6.github.io/docs/ceph/osd/</guid>
+      <guid>/docs/ceph/osd/</guid>
       <description>OSD Get OSD metadata $ ceph osd metadata $(OSD_ID) Count object store by type $ ceph osd count-metadata osd_objectstore Get all OSDs version $ ceph tell osd.* version Get OSD tree $ ceph osd tree List all OSD device class $ ceph osd crush class ls List OSD by class $ ceph osd crush class ls-osd $(CLASS) Remove OSD device class $ ceph osd crush rm-device-class osd.$(OSD_NUMBER) Multiple OSD could be specified at the same time</description>
     </item>
     
     <item>
       <title>MGR</title>
-      <link>the-so6.github.io/docs/ceph/mgr/</link>
+      <link>/docs/ceph/mgr/</link>
       <pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate>
       
-      <guid>the-so6.github.io/docs/ceph/mgr/</guid>
+      <guid>/docs/ceph/mgr/</guid>
       <description>List modules $ ceph mgr module ls Enable module $ ceph mgr module enable $(MODULE) Disable module $ ceph mgr module disable $(MODULE) List modules endpoint $ ceph mgr services </description>
     </item>
     
     <item>
       <title>Ceph Benchmark</title>
-      <link>the-so6.github.io/docs/ceph/bench/</link>
+      <link>/docs/ceph/bench/</link>
       <pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate>
       
-      <guid>the-so6.github.io/docs/ceph/bench/</guid>
+      <guid>/docs/ceph/bench/</guid>
       <description>Rados write $ rados bench -p $(CEPH_POOL) $(TIME) write --no-cleanup Rados sequencial read $ rados bench -p $(CEPH_POOL) $(TIME) seq Rados random read $ rados bench -p $(CEPH_POOL) $(TIME) rand RBD Benchmark $ rbd bench-write $(RBD_IMAGE) --pool=$(RBD_POOL) </description>
     </item>
     

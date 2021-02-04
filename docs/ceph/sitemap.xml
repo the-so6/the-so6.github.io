@@ -2,49 +2,49 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
     <url>
-      <loc>the-so6.github.io/docs/ceph/administration/</loc>
+      <loc>/docs/ceph/administration/</loc>
       <lastmod>2020-10-13T15:21:01+02:00</lastmod>
       <changefreq>weekly</changefreq>
       <priority>0.5</priority>
     </url>
     
     <url>
-      <loc>the-so6.github.io/docs/ceph/crushmap/</loc>
+      <loc>/docs/ceph/crushmap/</loc>
       <lastmod>2020-10-13T15:21:01+02:00</lastmod>
       <changefreq>weekly</changefreq>
       <priority>0.5</priority>
     </url>
     
     <url>
-      <loc>the-so6.github.io/docs/ceph/pool/</loc>
+      <loc>/docs/ceph/pool/</loc>
       <lastmod>2020-10-13T15:21:01+02:00</lastmod>
       <changefreq>weekly</changefreq>
       <priority>0.5</priority>
     </url>
     
     <url>
-      <loc>the-so6.github.io/docs/ceph/cephx/</loc>
+      <loc>/docs/ceph/cephx/</loc>
       <lastmod>2020-10-13T15:21:01+02:00</lastmod>
       <changefreq>weekly</changefreq>
       <priority>0.5</priority>
     </url>
     
     <url>
-      <loc>the-so6.github.io/docs/ceph/osd/</loc>
+      <loc>/docs/ceph/osd/</loc>
       <lastmod>2020-10-13T15:21:01+02:00</lastmod>
       <changefreq>weekly</changefreq>
       <priority>0.5</priority>
     </url>
     
     <url>
-      <loc>the-so6.github.io/docs/ceph/mgr/</loc>
+      <loc>/docs/ceph/mgr/</loc>
       <lastmod>2020-10-13T15:21:01+02:00</lastmod>
       <changefreq>weekly</changefreq>
       <priority>0.5</priority>
     </url>
     
     <url>
-      <loc>the-so6.github.io/docs/ceph/bench/</loc>
+      <loc>/docs/ceph/bench/</loc>
       <lastmod>2020-10-13T15:21:01+02:00</lastmod>
       <changefreq>weekly</changefreq>
       <priority>0.5</priority>

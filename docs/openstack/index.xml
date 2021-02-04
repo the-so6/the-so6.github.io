@@ -2,63 +2,63 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Openstack chapter on </title>
-    <link>the-so6.github.io/docs/openstack/</link>
+    <link>/docs/openstack/</link>
     <description>Recent content in Openstack chapter on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Tue, 06 Oct 2020 08:49:15 +0000</lastBuildDate><atom:link href="the-so6.github.io/docs/openstack/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 06 Oct 2020 08:49:15 +0000</lastBuildDate><atom:link href="/docs/openstack/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Nova</title>
-      <link>the-so6.github.io/docs/openstack/nova/</link>
+      <link>/docs/openstack/nova/</link>
       <pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate>
       
-      <guid>the-so6.github.io/docs/openstack/nova/</guid>
+      <guid>/docs/openstack/nova/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Keystone</title>
-      <link>the-so6.github.io/docs/openstack/keystone/</link>
+      <link>/docs/openstack/keystone/</link>
       <pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate>
       
-      <guid>the-so6.github.io/docs/openstack/keystone/</guid>
+      <guid>/docs/openstack/keystone/</guid>
       <description>User Management List users  $ openstack user list Create user  $ openstack user create --password &amp;lt;user_pssword&amp;gt; &amp;lt;username&amp;gt; Update curent user password  $ openstack user password set --password &amp;lt;new-password&amp;gt; Delete User  $ openstack user delete &amp;lt;username&amp;gt; Catalog managamenet Create service  $ openstack service create --name &amp;lt;service_name&amp;gt; \  --description &amp;#34;&amp;lt;service_description&amp;gt;&amp;#34; &amp;lt;openstack_service_name&amp;gt; example:
 $ openstack service create --name glance \  --description &amp;#34;OpenStack Image service&amp;#34; image Create endpoint  $ openstack endpoint create --region &amp;lt;region_name&amp;gt;\  image public &amp;lt;endpoint_url&amp;gt; example:</description>
     </item>
     
     <item>
       <title>Glance</title>
-      <link>the-so6.github.io/docs/openstack/glance/</link>
+      <link>/docs/openstack/glance/</link>
       <pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate>
       
-      <guid>the-so6.github.io/docs/openstack/glance/</guid>
+      <guid>/docs/openstack/glance/</guid>
       <description>List images  $ openstack image list Create image  $ openstack image create &amp;lt;image_name&amp;gt; \  --disk-format &amp;lt;disk_format&amp;gt; \  --public \  --file &amp;lt;file&amp;gt; Download Image  $ openstack image save &amp;lt;image_id&amp;gt; --file &amp;lt;image_file_name.img&amp;gt; </description>
     </item>
     
     <item>
       <title>Neutron</title>
-      <link>the-so6.github.io/docs/openstack/neutron/</link>
+      <link>/docs/openstack/neutron/</link>
       <pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate>
       
-      <guid>the-so6.github.io/docs/openstack/neutron/</guid>
+      <guid>/docs/openstack/neutron/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Cinder</title>
-      <link>the-so6.github.io/docs/openstack/cinder/</link>
+      <link>/docs/openstack/cinder/</link>
       <pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate>
       
-      <guid>the-so6.github.io/docs/openstack/cinder/</guid>
+      <guid>/docs/openstack/cinder/</guid>
       <description>Cinder&amp;rsquo;s services List services and show state $ openstack volume service list Manage Type Create a type $ openstack volume type create &amp;lt;type_name&amp;gt; Delete a type $ openstack volume type delete &amp;lt;type_name&amp;gt; List all type $ openstack volume type list Manage Volume List volumes $ openstack volume list List detail from a volume $ openstack volume show &amp;lt;volume_id&amp;gt; Create a volume $ openstack volume create --size &amp;lt;size_GB&amp;gt; &amp;lt;vol_name&amp;gt; Delete a volume $ openstack volume delete &amp;lt;volume_id&amp;gt; </description>
     </item>
     
     <item>
       <title>Heat</title>
-      <link>the-so6.github.io/docs/openstack/heat/</link>
+      <link>/docs/openstack/heat/</link>
       <pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate>
       
-      <guid>the-so6.github.io/docs/openstack/heat/</guid>
+      <guid>/docs/openstack/heat/</guid>
       <description></description>
     </item>
     

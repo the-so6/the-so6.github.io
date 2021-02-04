@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Database chapter on </title>
-    <link>the-so6.github.io/docs/database/</link>
+    <link>/docs/database/</link>
     <description>Recent content in Database chapter on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Tue, 06 Oct 2020 08:49:15 +0000</lastBuildDate><atom:link href="the-so6.github.io/docs/database/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 06 Oct 2020 08:49:15 +0000</lastBuildDate><atom:link href="/docs/database/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Galera</title>
-      <link>the-so6.github.io/docs/database/galera/</link>
+      <link>/docs/database/galera/</link>
       <pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate>
       
-      <guid>the-so6.github.io/docs/database/galera/</guid>
+      <guid>/docs/database/galera/</guid>
       <description>Recover Disaster Restart a stopped Galera Cluster On one of the node change safe_to_bootstrap to 1 in /var/lib/mysql/grastate.dat
 # GALERA saved state version: 2.1 uuid: 34546540-er30-1223-rsa0-23343fesf25c seqno: -1 cert_index: safe_to_bootstrap: 1 👉 On a running node `seqno: -1` is a normal behaviour, in case of crash find the highest to be sure to bootstrap from the safety node  Start a new cluster  $ galera_new_cluster The others nodes
  $ systemctl restart mariadb Monitoring Galera Cluster Show all wsrep  MariaDB [(none)]&amp;gt; SHOW GLOBAL STATUS LIKE &amp;#39;wsrep_%&amp;#39;; Check cluster integrity  MariaDB [(none)]&amp;gt; SHOW GLOBAL STATUS LIKE &amp;#39;wsrep_cluster_state_uuid&amp;#39;; Show cluster size  MariaDB [(none)]&amp;gt; SHOW GLOBAL STATUS LIKE &amp;#39;wsrep_cluster_size&amp;#39;; Show cluster status  MariaDB [(none)]&amp;gt; SHOW GLOBAL STATUS LIKE &amp;#39;wsrep_cluster_status&amp;#39;; Show node status Show if the node can accept queries :</description>

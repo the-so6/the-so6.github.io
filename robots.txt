@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: the-so6.github.io/sitemap.xml
+Sitemap: /sitemap.xml

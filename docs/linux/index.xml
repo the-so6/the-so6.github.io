@@ -2,26 +2,26 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Linux chapter on </title>
-    <link>the-so6.github.io/docs/linux/</link>
+    <link>/docs/linux/</link>
     <description>Recent content in Linux chapter on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Tue, 06 Oct 2020 08:49:15 +0000</lastBuildDate><atom:link href="the-so6.github.io/docs/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 06 Oct 2020 08:49:15 +0000</lastBuildDate><atom:link href="/docs/linux/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>RabbitMQ</title>
-      <link>the-so6.github.io/docs/linux/rabbitmq/</link>
+      <link>/docs/linux/rabbitmq/</link>
       <pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate>
       
-      <guid>the-so6.github.io/docs/linux/rabbitmq/</guid>
+      <guid>/docs/linux/rabbitmq/</guid>
       <description>RabbitMQCtl Queue management List all queues  $ rabbitmqctl list_queues App management Stop RabbitMQ app  $ rabbitmqctl stop_app Start RabbitMQ app  $ rabbitmqctl start_app Users management List RabbitMQ users  $ rabbitmqctl list_users Status Get RabbitMQ status  $ rabbitmqctl status Get Cluster status  $ rabbitmqctl cluster_status Cluster management Set Cluster name  $ rabbitmqctl set_cluster_name $(NAME) Joining the cluster  $ rabbitmqctl join_cluster rabbit@$(NODE_SHORT_NAME) Option :</description>
     </item>
     
     <item>
       <title>Systemd</title>
-      <link>the-so6.github.io/docs/linux/systemd/</link>
+      <link>/docs/linux/systemd/</link>
       <pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate>
       
-      <guid>the-so6.github.io/docs/linux/systemd/</guid>
+      <guid>/docs/linux/systemd/</guid>
       <description>Command line Common The --user option limit command on the user scope
 The --system option do the same but for the system and is the default.
 The user systemd unit file can be found in :

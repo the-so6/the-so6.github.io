@@ -2,42 +2,42 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
     <url>
-      <loc>the-so6.github.io/docs/openstack/nova/</loc>
+      <loc>/docs/openstack/nova/</loc>
       <lastmod>2020-10-13T15:21:01+02:00</lastmod>
       <changefreq>weekly</changefreq>
       <priority>0.5</priority>
     </url>
     
     <url>
-      <loc>the-so6.github.io/docs/openstack/keystone/</loc>
+      <loc>/docs/openstack/keystone/</loc>
       <lastmod>2020-10-13T15:21:01+02:00</lastmod>
       <changefreq>weekly</changefreq>
       <priority>0.5</priority>
     </url>
     
     <url>
-      <loc>the-so6.github.io/docs/openstack/glance/</loc>
+      <loc>/docs/openstack/glance/</loc>
       <lastmod>2020-10-13T15:21:01+02:00</lastmod>
       <changefreq>weekly</changefreq>
       <priority>0.5</priority>
     </url>
     
     <url>
-      <loc>the-so6.github.io/docs/openstack/neutron/</loc>
+      <loc>/docs/openstack/neutron/</loc>
       <lastmod>2020-10-13T15:21:01+02:00</lastmod>
       <changefreq>weekly</changefreq>
       <priority>0.5</priority>
     </url>
     
     <url>
-      <loc>the-so6.github.io/docs/openstack/cinder/</loc>
+      <loc>/docs/openstack/cinder/</loc>
       <lastmod>2020-10-13T15:21:01+02:00</lastmod>
       <changefreq>weekly</changefreq>
       <priority>0.5</priority>
     </url>
     
     <url>
-      <loc>the-so6.github.io/docs/openstack/heat/</loc>
+      <loc>/docs/openstack/heat/</loc>
       <lastmod>2020-10-13T15:21:01+02:00</lastmod>
       <changefreq>weekly</changefreq>
       <priority>0.5</priority>
