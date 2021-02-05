@@ -123,6 +123,7 @@
   <h3>Ceph</h3>
   <ul class="list-unstyled">
     <li><a class="docs-link" href="/docs/ceph/administration/">Ceph cluster</a></li>
+    <li><a class="docs-link" href="/docs/ceph/config/">Ceph configuration</a></li>
     <li><a class="docs-link active" href="/docs/ceph/crushmap/">CRUSH map and rules</a></li>
     <li><a class="docs-link" href="/docs/ceph/pool/">Pools</a></li>
     <li><a class="docs-link" href="/docs/ceph/cephx/">User Management </a></li>
@@ -170,16 +171,16 @@
 			<p class="lead">Ceph objects administration</p>
 			<h2 id="crushmap">CrushMap<a href="#crushmap" class="anchor" aria-hidden="true">#</a> </h2>
 <p>Get CrushMap</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">   $ ceph osd getcrushmap -o <span class="k">$(</span>binary_file<span class="k">)</span>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">   $ ceph osd getcrushmap -o &lt;binary_file&gt;
 </code></pre></div><h3 id="convert-crushmap">Convert crushMap<a href="#convert-crushmap" class="anchor" aria-hidden="true">#</a> </h3>
 <p>From binary to text</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">   $ crushtool -d <span class="k">$(</span>binary_file<span class="k">)</span> -o <span class="k">$(</span>text_file<span class="k">)</span>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">   $ crushtool -d &lt;binary_file&gt; -o &lt;text_file&gt;
 </code></pre></div><p>From text to binary</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">   $ crushtool -c <span class="k">$(</span>text_file<span class="k">)</span> -o <span class="k">$(</span>binary_file<span class="k">)</span>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">   $ crushtool -c &lt;text_file&gt; -o &lt;binary_file&gt;
 </code></pre></div><h3 id="set-crushmap">Set CrushMap<a href="#set-crushmap" class="anchor" aria-hidden="true">#</a> </h3>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">   $ ceph osd setcrushmap -i <span class="k">$(</span>binary_file<span class="k">)</span>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">   $ ceph osd setcrushmap -i &lt;binary_file&gt;
 </code></pre></div><h3 id="create-new-bucket">Create new bucket<a href="#create-new-bucket" class="anchor" aria-hidden="true">#</a> </h3>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">   $ ceph osd crush add-bucket <span class="k">$(</span>name<span class="k">)</span> <span class="k">$(</span><span class="nb">type</span><span class="k">)</span>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">   $ ceph osd crush add-bucket &lt;name&gt; &lt;type&gt;
 </code></pre></div><p>List of types :</p>
 <ul>
 <li>osd</li>
@@ -195,26 +196,26 @@
 <li>root</li>
 </ul>
 <h3 id="delete-bucket">Delete bucket<a href="#delete-bucket" class="anchor" aria-hidden="true">#</a> </h3>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">   $ ceph osd crush remove <span class="k">$(</span>BUCKET_NAME<span class="k">)</span>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">   $ ceph osd crush remove &lt;bucket&gt;
 </code></pre></div><h3 id="move-object-to-new-bucket">Move object to new bucket<a href="#move-object-to-new-bucket" class="anchor" aria-hidden="true">#</a> </h3>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">   $ ceph osd crush move <span class="k">$(</span>object<span class="k">)</span> <span class="k">$(</span>bucket_type<span class="k">)</span><span class="o">=</span><span class="k">$(</span>bucket_name<span class="k">)</span>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">   $ ceph osd crush move &lt;object&gt; &lt;bucket_type&gt;<span class="o">=</span>&lt;bucket_name&gt;
 </code></pre></div><h3 id="create-new-replicated-rule">Create new replicated rule<a href="#create-new-replicated-rule" class="anchor" aria-hidden="true">#</a> </h3>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">   $ ceph osd crush rule create-replicated <span class="k">$(</span>RULE_NAME<span class="k">)</span> <span class="k">$(</span>BUCKET_LOCATION<span class="k">)</span> <span class="k">$(</span>BUCKET_REP<span class="k">)</span> <span class="k">$(</span>OSD_CLASS<span class="k">)</span>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">   $ ceph osd crush rule create-replicated &lt;rule_name&gt; &lt;bucket_location&gt; &lt;bucket_rep&gt; &lt;osd_class&gt;
 </code></pre></div><p>Example will create a replicated rule limited on datacenter <strong>dc1</strong> with SSD :</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">   $ ceph osd crush rule create-replicated dc1-fast dc1 host ssd
 </code></pre></div><h3 id="list-rules">List rules<a href="#list-rules" class="anchor" aria-hidden="true">#</a> </h3>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">   $ ceph osd crush rule ls
 </code></pre></div><h3 id="dump-rules">Dump rules<a href="#dump-rules" class="anchor" aria-hidden="true">#</a> </h3>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">   $ ceph osd crush rule dump <span class="k">$(</span>rule<span class="k">)</span>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">   $ ceph osd crush rule dump &lt;rule&gt;
 </code></pre></div><h3 id="remove-rule">Remove rule<a href="#remove-rule" class="anchor" aria-hidden="true">#</a> </h3>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">   $ ceph osd crush rule rm <span class="k">$(</span>RULE_NAME<span class="k">)</span>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">   $ ceph osd crush rule rm &lt;rule_name&gt;
 </code></pre></div>
 			<div class="docs-navigation d-flex justify-content-between">
 	
-	<a href="/docs/net/ovn/">
+	<a href="/docs/ceph/config/">
 			<div class="card my-1">
 				<div class="card-body py-2">
-					&larr; Open Virtual Network
+					&larr; Ceph configuration
 				</div>
 			</div>
 		</a>
@@ -251,7 +252,7 @@
 </footer>
     
     <script src="/main.f6b484f556ad1f3bcf6061082139a2f21fa759f13930c39a25fe4a9f78f35e64122c2d86dffd56e67b292dabbda4095d8077194f196e0e348441c106a9f3d40e.js" integrity="sha512-9rSE9VatHzvPYGEIITmi8h&#43;nWfE5MMOaJf5Kn3jzXmQSLC2G3/1W5nspLau9pAldgHcZTxluDjSEQcEGqfPUDg==" crossorigin="anonymous" defer></script>
-  <script src="/index.min.6ecce97c0f4bf3a13839176d84084cad35575c055fa26ccf2f465f27ecba37f213938ffd626893a363652b91a920ba4afdcce3c75f38d62bacd073912dfebc43.js" integrity="sha512-bszpfA9L86E4ORdthAhMrTVXXAVfomzPL0ZfJ&#43;y6N/ITk4/9YmiTo2NlK5GpILpK/czjx1841ius0HORLf68Qw==" crossorigin="anonymous" defer></script>
+  <script src="/index.min.5e68eb95f33e15bff73da2093a3839c0024db2b8c710748894f0efc0db235cdc4fa58189f117c38af037d52bb6373be56bdcbb4d1b503db042bf20c8a6f8081e.js" integrity="sha512-XmjrlfM&#43;Fb/3PaIJOjg5wAJNsrjHEHSIlPDvwNsjXNxPpYGJ8RfDivA31Su2Nzvla9y7TRtQPbBCvyDIpvgIHg==" crossorigin="anonymous" defer></script>
 
   </body>
 </html>

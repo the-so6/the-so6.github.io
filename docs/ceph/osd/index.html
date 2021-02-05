@@ -123,6 +123,7 @@
   <h3>Ceph</h3>
   <ul class="list-unstyled">
     <li><a class="docs-link" href="/docs/ceph/administration/">Ceph cluster</a></li>
+    <li><a class="docs-link" href="/docs/ceph/config/">Ceph configuration</a></li>
     <li><a class="docs-link" href="/docs/ceph/crushmap/">CRUSH map and rules</a></li>
     <li><a class="docs-link" href="/docs/ceph/pool/">Pools</a></li>
     <li><a class="docs-link" href="/docs/ceph/cephx/">User Management </a></li>
@@ -172,7 +173,7 @@
 			<p class="lead">Manage OSDs</p>
 			<h2 id="osd">OSD<a href="#osd" class="anchor" aria-hidden="true">#</a> </h2>
 <h3 id="get-osd-metadata">Get OSD metadata<a href="#get-osd-metadata" class="anchor" aria-hidden="true">#</a> </h3>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">   $ ceph osd metadata <span class="k">$(</span>OSD_ID<span class="k">)</span>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">   $ ceph osd metadata &lt;id_osd&gt;
 </code></pre></div><h3 id="count-object-store-by-type">Count object store by type<a href="#count-object-store-by-type" class="anchor" aria-hidden="true">#</a> </h3>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">   $ ceph osd count-metadata osd_objectstore
 </code></pre></div><h3 id="get-all-osds-version">Get all OSDs version<a href="#get-all-osds-version" class="anchor" aria-hidden="true">#</a> </h3>
@@ -182,20 +183,20 @@
 </code></pre></div><h3 id="list-all-osd-device-class">List all OSD device class<a href="#list-all-osd-device-class" class="anchor" aria-hidden="true">#</a> </h3>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">   $ ceph osd crush class ls
 </code></pre></div><h3 id="list-osd-by-class">List OSD by class<a href="#list-osd-by-class" class="anchor" aria-hidden="true">#</a> </h3>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">   $ ceph osd crush class ls-osd <span class="k">$(</span>CLASS<span class="k">)</span>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">   $ ceph osd crush class ls-osd &lt;class&gt;
 </code></pre></div><h3 id="remove-osd-device-class">Remove OSD device class<a href="#remove-osd-device-class" class="anchor" aria-hidden="true">#</a> </h3>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">   $ ceph osd crush rm-device-class osd.<span class="k">$(</span>OSD_NUMBER<span class="k">)</span>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">   $ ceph osd crush rm-device-class osd.&lt;id_osd&gt;
 </code></pre></div><p>Multiple OSD could be specified at the same time</p>
 <h3 id="add-an-osd-device-class">Add an OSD device class<a href="#add-an-osd-device-class" class="anchor" aria-hidden="true">#</a> </h3>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">   $ ceph osd crush set-device-class <span class="k">$(</span>CLASS<span class="k">)</span> osd.<span class="k">$(</span>OSD_NUMBER<span class="k">)</span>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">   $ ceph osd crush set-device-class &lt;class&gt; osd.&lt;id_osd&gt;
 </code></pre></div><p>Multiple OSD could be specified at the same time</p>
 <h3 id="map-device-and-osd">Map device and osd<a href="#map-device-and-osd" class="anchor" aria-hidden="true">#</a> </h3>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">    $ ceph device ls
 </code></pre></div><p>OLD WAYS</p>
 <h3 id="dump-osd-config">Dump OSD config<a href="#dump-osd-config" class="anchor" aria-hidden="true">#</a> </h3>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">   $ ceph daemon osd.<span class="k">$(</span>ID<span class="k">)</span> config show
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">   $ ceph daemon osd.&lt;id_osd&gt; config show
 </code></pre></div><h3 id="dump-all-osd-config">Dump all OSD config<a href="#dump-all-osd-config" class="anchor" aria-hidden="true">#</a> </h3>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">   $ ceph tell osd.* config get <span class="k">$(</span>KEY<span class="k">)</span>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">   $ ceph tell osd.* config get &lt;key&gt;
 </code></pre></div>
 			<div class="docs-navigation d-flex justify-content-between">
 	
@@ -239,7 +240,7 @@
 </footer>
     
     <script src="/main.f6b484f556ad1f3bcf6061082139a2f21fa759f13930c39a25fe4a9f78f35e64122c2d86dffd56e67b292dabbda4095d8077194f196e0e348441c106a9f3d40e.js" integrity="sha512-9rSE9VatHzvPYGEIITmi8h&#43;nWfE5MMOaJf5Kn3jzXmQSLC2G3/1W5nspLau9pAldgHcZTxluDjSEQcEGqfPUDg==" crossorigin="anonymous" defer></script>
-  <script src="/index.min.6ecce97c0f4bf3a13839176d84084cad35575c055fa26ccf2f465f27ecba37f213938ffd626893a363652b91a920ba4afdcce3c75f38d62bacd073912dfebc43.js" integrity="sha512-bszpfA9L86E4ORdthAhMrTVXXAVfomzPL0ZfJ&#43;y6N/ITk4/9YmiTo2NlK5GpILpK/czjx1841ius0HORLf68Qw==" crossorigin="anonymous" defer></script>
+  <script src="/index.min.5e68eb95f33e15bff73da2093a3839c0024db2b8c710748894f0efc0db235cdc4fa58189f117c38af037d52bb6373be56bdcbb4d1b503db042bf20c8a6f8081e.js" integrity="sha512-XmjrlfM&#43;Fb/3PaIJOjg5wAJNsrjHEHSIlPDvwNsjXNxPpYGJ8RfDivA31Su2Nzvla9y7TRtQPbBCvyDIpvgIHg==" crossorigin="anonymous" defer></script>
 
   </body>
 </html>

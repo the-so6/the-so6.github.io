@@ -13,8 +13,17 @@
       <pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate>
       
       <guid>/docs/ceph/administration/</guid>
-      <description>Cluster Get cluster health $ ceph -s $ ceph health $ ceph -w Dump config $ ceph --admin-daemon $(admin_socket) config show The $(admin_socket) should be in /var/run/ceph for example /var/run/ceph/ceph-mon.ceph-mon.asok
-Get OSD stats $ ceph osd stat Get MON stats $ ceph mon stat Get MDS stats $ ceph mds stat Dump placement group $ ceph pg dump Dump stunked placement group $ ceph pg dump_stuck Get MON quorum status $ ceph quorum_status Monitor Dump monmap $ ceph mon getmap -o $(PATH) Print monmap $ monmaptool --print $(MONMAP_PATH) </description>
+      <description>Cluster Get cluster health $ ceph -s $ ceph health $ ceph -w Get OSD stats $ ceph osd stat Get MON stats $ ceph mon stat Get MDS stats $ ceph mds stat Dump placement group $ ceph pg dump Dump stunked placement group $ ceph pg dump_stuck Get MON quorum status $ ceph quorum_status Monitor Dump monmap $ ceph mon getmap -o &amp;lt;path&amp;gt; Print monmap $ monmaptool --print &amp;lt;monmap_path&amp;gt; </description>
+    </item>
+    
+    <item>
+      <title>Ceph configuration</title>
+      <link>/docs/ceph/config/</link>
+      <pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate>
+      
+      <guid>/docs/ceph/config/</guid>
+      <description>Ceph centralized configuration Dump configuration  ceph config dump Set parameter  ceph config set &amp;lt;who&amp;gt; &amp;lt;name&amp;gt; &amp;lt;value&amp;gt; Help on a particular parameter  ceph config help &amp;lt;parameter&amp;gt; Example:
+ceph config help mon_allow_pool_delete mon_allow_pool_delete - allow pool deletions (bool, advanced) Default: false Can update at runtime: true Services: [mon] configuration history  ceph config log Rollbask configuration  ceph config reset &amp;lt;log_to_reset&amp;gt; Assimilation from standart ceph.conf  ceph config assimilate-conf -i &amp;lt;source_conf_file&amp;gt; -o &amp;lt;new_conf_file&amp;gt; </description>
     </item>
     
     <item>
@@ -24,10 +33,10 @@ Get OSD stats $ ceph osd stat Get MON stats $ ceph mon stat Get MDS stats $ ceph
       
       <guid>/docs/ceph/crushmap/</guid>
       <description>CrushMap Get CrushMap
-$ ceph osd getcrushmap -o $(binary_file) Convert crushMap From binary to text
-$ crushtool -d $(binary_file) -o $(text_file) From text to binary
-$ crushtool -c $(text_file) -o $(binary_file) Set CrushMap $ ceph osd setcrushmap -i $(binary_file) Create new bucket $ ceph osd crush add-bucket $(name) $(type) List of types :
- osd host chassis rack row pdu pod room datacenter region root  Delete bucket $ ceph osd crush remove $(BUCKET_NAME) Move object to new bucket $ ceph osd crush move $(object) $(bucket_type)=$(bucket_name) Create new replicated rule $ ceph osd crush rule create-replicated $(RULE_NAME) $(BUCKET_LOCATION) $(BUCKET_REP) $(OSD_CLASS) Example will create a replicated rule limited on datacenter dc1 with SSD :</description>
+$ ceph osd getcrushmap -o &amp;lt;binary_file&amp;gt; Convert crushMap From binary to text
+$ crushtool -d &amp;lt;binary_file&amp;gt; -o &amp;lt;text_file&amp;gt; From text to binary
+$ crushtool -c &amp;lt;text_file&amp;gt; -o &amp;lt;binary_file&amp;gt; Set CrushMap $ ceph osd setcrushmap -i &amp;lt;binary_file&amp;gt; Create new bucket $ ceph osd crush add-bucket &amp;lt;name&amp;gt; &amp;lt;type&amp;gt; List of types :
+ osd host chassis rack row pdu pod room datacenter region root  Delete bucket $ ceph osd crush remove &amp;lt;bucket&amp;gt; Move object to new bucket $ ceph osd crush move &amp;lt;object&amp;gt; &amp;lt;bucket_type&amp;gt;=&amp;lt;bucket_name&amp;gt; Create new replicated rule $ ceph osd crush rule create-replicated &amp;lt;rule_name&amp;gt; &amp;lt;bucket_location&amp;gt; &amp;lt;bucket_rep&amp;gt; &amp;lt;osd_class&amp;gt; Example will create a replicated rule limited on datacenter dc1 with SSD :</description>
     </item>
     
     <item>
@@ -37,7 +46,7 @@ $ crushtool -c $(text_file) -o $(binary_file) Set CrushMap $ ceph osd setcrushma
       
       <guid>/docs/ceph/pool/</guid>
       <description>Pools List pools $ ceph osd pool ls detail Here detail is optionnal
-Get pool information $ ceph osd pool get $(pool_name) all Delete pool $ ceph osd pool rm $(pool_name) $(pool_name) --yes-really-really-mean-it Create new replicated pool $ ceph osd pool create $(pool_name) $(pg_number) $ ceph osd pool set $(pool_name) size $(replicas_number) Create new erasure coding pool Get erasure coding profile :
+Get pool information $ ceph osd pool get &amp;lt;pool_name&amp;gt; all Delete pool $ ceph osd pool rm &amp;lt;pool_name&amp;gt; &amp;lt;pool_name&amp;gt; --yes-really-really-mean-it Create new replicated pool $ ceph osd pool create &amp;lt;pool_name&amp;gt; &amp;lt;pg_number&amp;gt; $ ceph osd pool set &amp;lt;pool_name&amp;gt; size &amp;lt;replicas_number&amp;gt; Create new erasure coding pool Get erasure coding profile :
 $ ceph osd erasure-code-profile get default Or create new erasure coding profile :</description>
     </item>
     
@@ -47,7 +56,7 @@ $ ceph osd erasure-code-profile get default Or create new erasure coding profile
       <pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate>
       
       <guid>/docs/ceph/cephx/</guid>
-      <description>List all CephX auth $ ceph auth list Get an user $ ceph auth get-or-create $(USER) Create an user $ ceph auth get-or-create $(USER) mon $(MON_CAPS) osd $(OSD_CAPS) Update user caps $ ceph auth caps $(USER) mon $(MON_CAPS) osd $(OSD_CAPS) Delete user $ ceph auth caps $(USER) mon &amp;#39;&amp;#39; osd &amp;#39;&amp;#39; </description>
+      <description>List all CephX auth $ ceph auth list Get an user $ ceph auth get-or-create &amp;lt;user&amp;gt; Create an user $ ceph auth get-or-create &amp;lt;user&amp;gt; mon &amp;lt;mon_caps&amp;gt; osd &amp;lt;osd_caps&amp;gt; Update user caps $ ceph auth caps &amp;lt;user&amp;gt; mon &amp;lt;mon_caps&amp;gt; osd &amp;lt;osd_caps&amp;gt; Delete user $ ceph auth caps &amp;lt;user&amp;gt; mon &amp;#39;&amp;#39; osd &amp;#39;&amp;#39; </description>
     </item>
     
     <item>
@@ -56,7 +65,7 @@ $ ceph osd erasure-code-profile get default Or create new erasure coding profile
       <pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate>
       
       <guid>/docs/ceph/osd/</guid>
-      <description>OSD Get OSD metadata $ ceph osd metadata $(OSD_ID) Count object store by type $ ceph osd count-metadata osd_objectstore Get all OSDs version $ ceph tell osd.* version Get OSD tree $ ceph osd tree List all OSD device class $ ceph osd crush class ls List OSD by class $ ceph osd crush class ls-osd $(CLASS) Remove OSD device class $ ceph osd crush rm-device-class osd.$(OSD_NUMBER) Multiple OSD could be specified at the same time</description>
+      <description>OSD Get OSD metadata $ ceph osd metadata &amp;lt;id_osd&amp;gt; Count object store by type $ ceph osd count-metadata osd_objectstore Get all OSDs version $ ceph tell osd.* version Get OSD tree $ ceph osd tree List all OSD device class $ ceph osd crush class ls List OSD by class $ ceph osd crush class ls-osd &amp;lt;class&amp;gt; Remove OSD device class $ ceph osd crush rm-device-class osd.&amp;lt;id_osd&amp;gt; Multiple OSD could be specified at the same time</description>
     </item>
     
     <item>
@@ -65,7 +74,7 @@ $ ceph osd erasure-code-profile get default Or create new erasure coding profile
       <pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate>
       
       <guid>/docs/ceph/mgr/</guid>
-      <description>List modules $ ceph mgr module ls Enable module $ ceph mgr module enable $(MODULE) Disable module $ ceph mgr module disable $(MODULE) List modules endpoint $ ceph mgr services </description>
+      <description>List modules $ ceph mgr module ls Enable module $ ceph mgr module enable &amp;lt;module&amp;gt; Disable module $ ceph mgr module disable &amp;lt;module&amp;gt; List modules endpoint $ ceph mgr services </description>
     </item>
     
     <item>
@@ -74,7 +83,7 @@ $ ceph osd erasure-code-profile get default Or create new erasure coding profile
       <pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate>
       
       <guid>/docs/ceph/bench/</guid>
-      <description>Rados write $ rados bench -p $(CEPH_POOL) $(TIME) write --no-cleanup Rados sequencial read $ rados bench -p $(CEPH_POOL) $(TIME) seq Rados random read $ rados bench -p $(CEPH_POOL) $(TIME) rand RBD Benchmark $ rbd bench-write $(RBD_IMAGE) --pool=$(RBD_POOL) </description>
+      <description>Rados write $ rados bench -p &amp;lt;pool&amp;gt; &amp;lt;time_in_seq&amp;gt; write --no-cleanup Rados sequencial read $ rados bench -p &amp;lt;pool&amp;gt; &amp;lt;time_in_seq&amp;gt; seq Rados random read $ rados bench -p &amp;lt;pool&amp;gt; &amp;lt;time_in_seq&amp;gt; rand RBD Benchmark $ rbd bench-write &amp;lt;image&amp;gt; --pool=&amp;lt;pool_rbd&amp;gt; </description>
     </item>
     
   </channel>

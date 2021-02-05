@@ -123,6 +123,7 @@
   <h3>Ceph</h3>
   <ul class="list-unstyled">
     <li><a class="docs-link" href="/docs/ceph/administration/">Ceph cluster</a></li>
+    <li><a class="docs-link" href="/docs/ceph/config/">Ceph configuration</a></li>
     <li><a class="docs-link" href="/docs/ceph/crushmap/">CRUSH map and rules</a></li>
     <li><a class="docs-link" href="/docs/ceph/pool/">Pools</a></li>
     <li><a class="docs-link" href="/docs/ceph/cephx/">User Management </a></li>
@@ -160,13 +161,13 @@
 		<h1>Ceph Benchmark</h1>
 			<p class="lead">Benchmarking ceph</p>
 			<h2 id="rados-write">Rados write<a href="#rados-write" class="anchor" aria-hidden="true">#</a> </h2>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">   $ rados bench -p <span class="k">$(</span>CEPH_POOL<span class="k">)</span> <span class="k">$(</span>TIME<span class="k">)</span> write --no-cleanup
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">   $ rados bench -p &lt;pool&gt; &lt;time_in_seq&gt; write --no-cleanup
 </code></pre></div><h2 id="rados-sequencial-read">Rados sequencial read<a href="#rados-sequencial-read" class="anchor" aria-hidden="true">#</a> </h2>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">   $ rados bench -p <span class="k">$(</span>CEPH_POOL<span class="k">)</span> <span class="k">$(</span>TIME<span class="k">)</span> seq
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">   $ rados bench -p &lt;pool&gt; &lt;time_in_seq&gt; seq
 </code></pre></div><h2 id="rados-random-read">Rados random read<a href="#rados-random-read" class="anchor" aria-hidden="true">#</a> </h2>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">   $ rados bench -p <span class="k">$(</span>CEPH_POOL<span class="k">)</span> <span class="k">$(</span>TIME<span class="k">)</span> rand
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">   $ rados bench -p &lt;pool&gt; &lt;time_in_seq&gt; rand
 </code></pre></div><h2 id="rbd-benchmark">RBD Benchmark<a href="#rbd-benchmark" class="anchor" aria-hidden="true">#</a> </h2>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">   $ rbd bench-write <span class="k">$(</span>RBD_IMAGE<span class="k">)</span> --pool<span class="o">=</span><span class="k">$(</span>RBD_POOL<span class="k">)</span>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">   $ rbd bench-write &lt;image&gt; --pool<span class="o">=</span>&lt;pool_rbd&gt;
 </code></pre></div>
 			<div class="docs-navigation d-flex justify-content-between">
 	
@@ -210,7 +211,7 @@
 </footer>
     
     <script src="/main.f6b484f556ad1f3bcf6061082139a2f21fa759f13930c39a25fe4a9f78f35e64122c2d86dffd56e67b292dabbda4095d8077194f196e0e348441c106a9f3d40e.js" integrity="sha512-9rSE9VatHzvPYGEIITmi8h&#43;nWfE5MMOaJf5Kn3jzXmQSLC2G3/1W5nspLau9pAldgHcZTxluDjSEQcEGqfPUDg==" crossorigin="anonymous" defer></script>
-  <script src="/index.min.6ecce97c0f4bf3a13839176d84084cad35575c055fa26ccf2f465f27ecba37f213938ffd626893a363652b91a920ba4afdcce3c75f38d62bacd073912dfebc43.js" integrity="sha512-bszpfA9L86E4ORdthAhMrTVXXAVfomzPL0ZfJ&#43;y6N/ITk4/9YmiTo2NlK5GpILpK/czjx1841ius0HORLf68Qw==" crossorigin="anonymous" defer></script>
+  <script src="/index.min.5e68eb95f33e15bff73da2093a3839c0024db2b8c710748894f0efc0db235cdc4fa58189f117c38af037d52bb6373be56bdcbb4d1b503db042bf20c8a6f8081e.js" integrity="sha512-XmjrlfM&#43;Fb/3PaIJOjg5wAJNsrjHEHSIlPDvwNsjXNxPpYGJ8RfDivA31Su2Nzvla9y7TRtQPbBCvyDIpvgIHg==" crossorigin="anonymous" defer></script>
 
   </body>
 </html>
