@@ -23,7 +23,7 @@
       
       <guid>/docs/ceph/config/</guid>
       <description>Ceph centralized configuration Dump configuration  ceph config dump Set parameter  ceph config set &amp;lt;who&amp;gt; &amp;lt;name&amp;gt; &amp;lt;value&amp;gt; Help on a particular parameter  ceph config help &amp;lt;parameter&amp;gt; Example:
-ceph config help mon_allow_pool_delete mon_allow_pool_delete - allow pool deletions (bool, advanced) Default: false Can update at runtime: true Services: [mon] configuration history  ceph config log Rollbask configuration  ceph config reset &amp;lt;log_to_reset&amp;gt; Assimilation from standart ceph.conf  ceph config assimilate-conf -i &amp;lt;source_conf_file&amp;gt; -o &amp;lt;new_conf_file&amp;gt; </description>
+ceph config help mon_allow_pool_delete mon_allow_pool_delete - allow pool deletions (bool, advanced) Default: false Can update at runtime: true Services: [mon] Configuration history  ceph config log Rollback configuration  ceph config reset &amp;lt;log_to_reset&amp;gt; Assimilation from standart ceph.conf  ceph config assimilate-conf -i &amp;lt;source_conf_file&amp;gt; -o &amp;lt;new_conf_file&amp;gt; </description>
     </item>
     
     <item>
