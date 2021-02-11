@@ -91,6 +91,12 @@
         <priority>0.5</priority>
       </url>
       <url>
+        <loc>/docs/ceph/cephadm/</loc>
+        <lastmod>2020-10-13T15:21:01+02:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.5</priority>
+      </url>
+      <url>
         <loc>/docs/database/galera/</loc>
         <lastmod>2020-10-13T15:21:01+02:00</lastmod>
         <changefreq>weekly</changefreq>

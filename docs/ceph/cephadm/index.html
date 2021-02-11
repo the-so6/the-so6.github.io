@@ -11,21 +11,21 @@
   <meta name="robots" content="index, follow">
   <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
   <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-  <title>OSD - Doks</title>
-<meta name="description" content="Administration CLI">
-<link rel="canonical" href="/docs/ceph/osd/">
+  <title>Cephadm - Doks</title>
+<meta name="description" content="cephadm CLI">
+<link rel="canonical" href="/docs/ceph/cephadm/">
 <meta name="twitter:card" content="summary_large_image">
       <meta name="twitter:image" content="/doks.png">
-    <meta name="twitter:title" content="OSD">
-<meta name="twitter:description" content="Administration CLI">
+    <meta name="twitter:title" content="Cephadm">
+<meta name="twitter:description" content="cephadm CLI">
 
 <meta name="twitter:site" content="@henkverlinde">
 <meta name="twitter:creator" content="@henkverlinde">
 
-<meta property="og:title" content="OSD">
-<meta property="og:description" content="Administration CLI">
+<meta property="og:title" content="Cephadm">
+<meta property="og:description" content="cephadm CLI">
 <meta property="og:type" content="article">
-<meta property="og:url" content="/docs/ceph/osd/">
+<meta property="og:url" content="/docs/ceph/cephadm/">
 
   <meta property="og:image" content="/doks.png"/>
     <meta property="article:published_time" content="2020-10-13T15:21:01+02:00">
@@ -48,8 +48,8 @@
     },{
         "@type": "ListItem",
         "position":  2 ,
-        "name": "Docscephosd",
-        "item": "\/docscephosd\/"
+        "name": "Docscephcephadm",
+        "item": "\/docscephcephadm\/"
     }]
 }
 </script>
@@ -127,10 +127,10 @@
     <li><a class="docs-link" href="/docs/ceph/crushmap/">CRUSH map and rules</a></li>
     <li><a class="docs-link" href="/docs/ceph/pool/">Pools</a></li>
     <li><a class="docs-link" href="/docs/ceph/cephx/">User Management </a></li>
-    <li><a class="docs-link active" href="/docs/ceph/osd/">OSD</a></li>
+    <li><a class="docs-link" href="/docs/ceph/osd/">OSD</a></li>
     <li><a class="docs-link" href="/docs/ceph/mgr/">MGR</a></li>
     <li><a class="docs-link" href="/docs/ceph/bench/">Ceph Benchmark</a></li>
-    <li><a class="docs-link" href="/docs/ceph/cephadm/">Cephadm</a></li>
+    <li><a class="docs-link active" href="/docs/ceph/cephadm/">Cephadm</a></li>
     </ul>
   <h3>Openstack</h3>
   <ul class="list-unstyled">
@@ -149,19 +149,15 @@
     <h3>On this page</h3>
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#osd">OSD</a>
+    <li><a href="#documentation">Documentation</a></li>
+    <li><a href="#usage">Usage</a>
       <ul>
-        <li><a href="#get-osd-metadata">Get OSD metadata</a></li>
-        <li><a href="#count-object-store-by-type">Count object store by type</a></li>
-        <li><a href="#get-all-osds-version">Get all OSDs version</a></li>
-        <li><a href="#get-osd-tree">Get OSD tree</a></li>
-        <li><a href="#list-all-osd-device-class">List all OSD device class</a></li>
-        <li><a href="#list-osd-by-class">List OSD by class</a></li>
-        <li><a href="#remove-osd-device-class">Remove OSD device class</a></li>
-        <li><a href="#add-an-osd-device-class">Add an OSD device class</a></li>
-        <li><a href="#map-device-and-osd">Map device and osd</a></li>
-        <li><a href="#dump-osd-config">Dump OSD config</a></li>
-        <li><a href="#dump-all-osd-config">Dump all OSD config</a></li>
+        <li><a href="#bootstrap-cluster">Bootstrap Cluster</a></li>
+        <li><a href="#configure-network-and-monitor">Configure network and monitor</a></li>
+        <li><a href="#adding-osds">Adding OSDs</a></li>
+        <li><a href="#add-filesystem">Add filesystem</a></li>
+        <li><a href="#add-rgw">Add RGW</a></li>
+        <li><a href="#replace-osds">Replace OSDs</a></li>
       </ul>
     </li>
   </ul>
@@ -170,48 +166,87 @@
 
 		</nav>
 		<main class="docs-content col-lg-11 col-xl-9">
-		<h1>OSD</h1>
-			<p class="lead">Manage OSDs</p>
-			<h2 id="osd">OSD<a href="#osd" class="anchor" aria-hidden="true">#</a> </h2>
-<h3 id="get-osd-metadata">Get OSD metadata<a href="#get-osd-metadata" class="anchor" aria-hidden="true">#</a> </h3>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">   $ ceph osd metadata &lt;id_osd&gt;
-</code></pre></div><h3 id="count-object-store-by-type">Count object store by type<a href="#count-object-store-by-type" class="anchor" aria-hidden="true">#</a> </h3>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">   $ ceph osd count-metadata osd_objectstore
-</code></pre></div><h3 id="get-all-osds-version">Get all OSDs version<a href="#get-all-osds-version" class="anchor" aria-hidden="true">#</a> </h3>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">   $ ceph tell osd.* version
-</code></pre></div><h3 id="get-osd-tree">Get OSD tree<a href="#get-osd-tree" class="anchor" aria-hidden="true">#</a> </h3>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">   $ ceph osd tree
-</code></pre></div><h3 id="list-all-osd-device-class">List all OSD device class<a href="#list-all-osd-device-class" class="anchor" aria-hidden="true">#</a> </h3>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">   $ ceph osd crush class ls
-</code></pre></div><h3 id="list-osd-by-class">List OSD by class<a href="#list-osd-by-class" class="anchor" aria-hidden="true">#</a> </h3>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">   $ ceph osd crush class ls-osd &lt;class&gt;
-</code></pre></div><h3 id="remove-osd-device-class">Remove OSD device class<a href="#remove-osd-device-class" class="anchor" aria-hidden="true">#</a> </h3>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">   $ ceph osd crush rm-device-class osd.&lt;id_osd&gt;
-</code></pre></div><p>Multiple OSD could be specified at the same time</p>
-<h3 id="add-an-osd-device-class">Add an OSD device class<a href="#add-an-osd-device-class" class="anchor" aria-hidden="true">#</a> </h3>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">   $ ceph osd crush set-device-class &lt;class&gt; osd.&lt;id_osd&gt;
-</code></pre></div><p>Multiple OSD could be specified at the same time</p>
-<h3 id="map-device-and-osd">Map device and osd<a href="#map-device-and-osd" class="anchor" aria-hidden="true">#</a> </h3>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">    $ ceph device ls
-</code></pre></div><p>OLD WAYS</p>
-<h3 id="dump-osd-config">Dump OSD config<a href="#dump-osd-config" class="anchor" aria-hidden="true">#</a> </h3>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">   $ ceph daemon osd.&lt;id_osd&gt; config show
-</code></pre></div><h3 id="dump-all-osd-config">Dump all OSD config<a href="#dump-all-osd-config" class="anchor" aria-hidden="true">#</a> </h3>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">   $ ceph tell osd.* config get &lt;key&gt;
+		<h1>Cephadm</h1>
+			<p class="lead">Cephadm and Ceph orch</p>
+			<h2 id="documentation">Documentation<a href="#documentation" class="anchor" aria-hidden="true">#</a> </h2>
+<p>You can find the official documentation here:</p>
+<p><a href="https://docs.ceph.com/en/latest/cephadm/install/">Official documentation</a></p>
+<h2 id="usage">Usage<a href="#usage" class="anchor" aria-hidden="true">#</a> </h2>
+<h3 id="bootstrap-cluster">Bootstrap Cluster<a href="#bootstrap-cluster" class="anchor" aria-hidden="true">#</a> </h3>
+<button class="btn-clipboard btn btn-sm btn-link" data-clipboard-text="sudo cephadm bootstrap"><span class="copy-status"></span></button>
+
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ sudo cephadm bootstrap --mon-ip &lt;mon-ip&gt; --cluster-network &lt;cluster_net&gt; --ssh-user &lt;user&gt;
+$ sudo cephadm bootstrap --mon-ip 192.168.0.10  --ssh-user vagrant
+</code></pre></div><p>We need to deploy ceph&rsquo;s ssh key on cluster&rsquo;s hosts</p>
+<button class="btn-clipboard btn btn-sm btn-link" data-clipboard-text="ssh-copy-id -f -i /etc/ceph/ceph.pub "><span class="copy-status"></span></button>
+
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ ssh-copy-id -f -i /etc/ceph/ceph.pub &lt;user&gt;@&lt;new-host&gt;
+</code></pre></div><p>Open a shell into your cluster
+<button class="btn-clipboard btn btn-sm btn-link" data-clipboard-text="sudo cephadm shell --fsid"><span class="copy-status"></span></button>
+</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ sudo cephadm shell --fsid 254961fc-6b7b-11eb-adbf-ab1c4f35b52e -c /etc/ceph/ceph.conf -k /etc/ceph/ceph.client.admin.keyring
+</code></pre></div><h3 id="configure-network-and-monitor">Configure network and monitor<a href="#configure-network-and-monitor" class="anchor" aria-hidden="true">#</a> </h3>
+<p>Set the public network into centralized configuration
+<button class="btn-clipboard btn btn-sm btn-link" data-clipboard-text="ceph config set mon public_network"><span class="copy-status"></span></button>
+</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># ceph config set mon public_network &lt;mon-cidr-network&gt;</span>
+</code></pre></div><p>Set number of monitor on your cluster and initialize it
+<button class="btn-clipboard btn btn-sm btn-link" data-clipboard-text="ceph orch apply mon "><span class="copy-status"></span></button>
+</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># ceph orch apply mon &lt;number-of-monitors&gt;</span>
+<span class="c1"># ceph orch apply mon &lt;host1,host2,host3,...&gt;</span>
+</code></pre></div><p>An other way to deploy monitors, labeled it and deploy all host who have th label</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># ceph orch host label add &lt;hostname&gt; mon</span>
+<span class="c1"># ceph orch host ls</span>
+<span class="c1"># ceph orch apply mon label:mon</span>
+</code></pre></div><h3 id="adding-osds">Adding OSDs<a href="#adding-osds" class="anchor" aria-hidden="true">#</a> </h3>
+<p>Adding all device available in your cluster
+<button class="btn-clipboard btn btn-sm btn-link" data-clipboard-text="ceph orch apply osd --all-available-devices"><span class="copy-status"></span></button>
+</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># ceph orch device ls</span>
+<span class="c1"># ceph orch apply osd --all-available-devices</span>
+</code></pre></div><p>Adding one device
+<button class="btn-clipboard btn btn-sm btn-link" data-clipboard-text="ceph orch daemon add osd"><span class="copy-status"></span></button>
+</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># ceph orch daemon add osd &lt;host&gt;:&lt;device-path&gt;</span>
+</code></pre></div><h3 id="add-filesystem">Add filesystem<a href="#add-filesystem" class="anchor" aria-hidden="true">#</a> </h3>
+<button class="btn-clipboard btn btn-sm btn-link" data-clipboard-text="ceph fs volume create"><span class="copy-status"></span></button>
+
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># ceph fs volume create &lt;fs_name&gt; --placement=&#34;&lt;placement&gt;&#34;&#34;</span>
+</code></pre></div><h3 id="add-rgw">Add RGW<a href="#add-rgw" class="anchor" aria-hidden="true">#</a> </h3>
+<button class="btn-clipboard btn btn-sm btn-link" data-clipboard-text="ceph orch apply rgw"><span class="copy-status"></span></button>
+
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># ceph orch apply rgw &lt;realm-name&gt; &lt;zone-name&gt; --placement=&#34;&lt;num-daemons&gt; [&lt;host&gt;...]&#34;</span>
+</code></pre></div><h3 id="replace-osds">Replace OSDs<a href="#replace-osds" class="anchor" aria-hidden="true">#</a> </h3>
+<p>Make sure it is safe to destroy the OSD:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># while ! ceph osd safe-to-destroy osd.{id} ; do sleep 10 ; done</span>
+</code></pre></div><p>Destroy the OSD first:</p>
+<button class="btn-clipboard btn btn-sm btn-link" data-clipboard-text="ceph osd destroy ID --yes-i-really-mean-it"><span class="copy-status"></span></button>
+
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># ceph osd destroy {id} --yes-i-really-mean-it</span>
+</code></pre></div><p>Zap a disk for the new OSD, if the disk was used before for other purposes. It’s not necessary for a new disk:
+This command must be run on node who host the osd.</p>
+<button class="btn-clipboard btn btn-sm btn-link" data-clipboard-text="cephadm ceph-volume lvm zap"><span class="copy-status"></span></button>
+
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># cephadm ceph-volume lvm zap /dev/sdX</span>
+</code></pre></div><p>Adding the osd with <code>ceph orch</code> command
+<button class="btn-clipboard btn btn-sm btn-link" data-clipboard-text="ceph orch daemon add osd"><span class="copy-status"></span></button>
+</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># ceph orch daemon add osd &lt;host&lt;&gt;:&lt;device-path&gt;</span>
 </code></pre></div>
 			<div class="docs-navigation d-flex justify-content-between">
 	
-	<a href="/docs/ceph/cephx/">
+	<a href="/docs/linux/systemd/">
 			<div class="card my-1">
 				<div class="card-body py-2">
-					&larr; User Management 
+					&larr; Systemd
 				</div>
 			</div>
 		</a>
-	<a class="ml-auto" href="/docs/ceph/mgr/">
+	<a class="ml-auto" href="/docs/openstack/keystone/">
 			<div class="card my-1">
 				<div class="card-body py-2">
-					MGR &rarr;
+					Keystone &rarr;
 				</div>
 			</div>
 		</a>

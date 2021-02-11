@@ -86,5 +86,17 @@ $ ceph osd erasure-code-profile get default Or create new erasure coding profile
       <description>Rados write $ rados bench -p &amp;lt;pool&amp;gt; &amp;lt;time_in_seq&amp;gt; write --no-cleanup Rados sequencial read $ rados bench -p &amp;lt;pool&amp;gt; &amp;lt;time_in_seq&amp;gt; seq Rados random read $ rados bench -p &amp;lt;pool&amp;gt; &amp;lt;time_in_seq&amp;gt; rand RBD Benchmark $ rbd bench-write &amp;lt;image&amp;gt; --pool=&amp;lt;pool_rbd&amp;gt; </description>
     </item>
     
+    <item>
+      <title>Cephadm</title>
+      <link>/docs/ceph/cephadm/</link>
+      <pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate>
+      
+      <guid>/docs/ceph/cephadm/</guid>
+      <description>Documentation You can find the official documentation here:
+Official documentation
+Usage Bootstrap Cluster  $ sudo cephadm bootstrap --mon-ip &amp;lt;mon-ip&amp;gt; --cluster-network &amp;lt;cluster_net&amp;gt; --ssh-user &amp;lt;user&amp;gt; $ sudo cephadm bootstrap --mon-ip 192.168.0.10 --ssh-user vagrant We need to deploy ceph&amp;rsquo;s ssh key on cluster&amp;rsquo;s hosts
+ $ ssh-copy-id -f -i /etc/ceph/ceph.pub &amp;lt;user&amp;gt;@&amp;lt;new-host&amp;gt; Open a shell into your cluster  $ sudo cephadm shell --fsid 254961fc-6b7b-11eb-adbf-ab1c4f35b52e -c /etc/ceph/ceph.conf -k /etc/ceph/ceph.client.admin.keyring Configure network and monitor Set the public network into centralized configuration  # ceph config set mon public_network &amp;lt;mon-cidr-network&amp;gt; Set number of monitor on your cluster and initialize it  # ceph orch apply mon &amp;lt;number-of-monitors&amp;gt; # ceph orch apply mon &amp;lt;host1,host2,host3,.</description>
+    </item>
+    
   </channel>
 </rss>
